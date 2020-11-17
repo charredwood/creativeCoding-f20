@@ -1,57 +1,64 @@
-let myData;
-let ppl;
-let cityName;
-let rCity = 0;
-
-function setup() {
-	createCanvas(450, 450);
-	httpGet("https://data.opendatasoft.com/api/records/1.0/search/?dataset=worldcitiespop%40public&sort=population&facet=country", myCallback);
-}
-
-function myCallback(output) {
-	//console messages for checking the data
-		// console.log(output);
-		// console.log(typeof output);
-
-	console.log(JSON.parse(output));
-	let dParsed = JSON.parse(output);
-
-	console.log(dParsed.records);
-	myData = dParsed.records;
-
-	//test
-		// console.log(dParsed.records[0].fields.city);
-		// console.log(dParsed.records[0].fields.population);
-
-	//Keys; not in use
-		// let myKeys = Object.keys(dParsed.records);
-		// console.log(myKeys);
-}
-
-function draw() {
-	//a breathing shape
-	background(76, 76, 76);
-	ellipseMode(CENTER);
-	noFill();
-	stroke(215, 230, 250, 100);
-	strokeWeight(10);
-	ellipse(width/2, 250, random(100, 250));
-	// frameRate(ppl * 0.000001);
-
-	//city name display
-	strokeWeight(2);
-	textSize(15);
-	textAlign(CENTER);
-	fill(234, 193, 193);
-	text(cityName, width/2, 100);
+class Snake {
 	
-	//api data
-	if (myData) {
-		ppl = myData[rCity].fields.population;
-		cityName = myData[rCity].fields.city;
+	constructor(){
+		this.lng = 0;
+		this.body = [];
+		this.body[0] = createVector(floor(w/2), floor(h/2));
+		this.xdir = 0;
+		this.ydir = 0;
 	}
-}
 
-function mouseClicked() {
-	rCity = parseInt(random(myData.length));
+	setDir(x, y){
+		this.xdir = x;
+		this.ydir = y;
+	}
+
+	update(){
+		let head = this.body[this.body.length-1].copy();
+		this.body.shift();
+		head.x += this.xdir;
+		head.y += this.ydir;
+		this.body.push(head);
+		
+		//modification: snake body to remain in the frame
+		// head.x = constrain(head.x, 0, width);
+		// head.y = constrain(head.y, 0, height);
+	}
+
+	grow(){
+		let head = this.body[this.body.length-1].copy();
+		this.lng++;
+		this.body.push(head);
+	}
+
+	eat(pos){
+		let x = this.body[this.body.length-1].x;
+		let y = this.body[this.body.length-1].y;
+		if (x == pos.x && y == pos.y){
+			this.grow();
+			return true;
+		}
+		return false;
+	}
+
+	show(){
+		for(let i = 0; i < this.body.length; i++){
+		noStroke();
+		//modification: the color gradually changes
+		let from = color(255, 67, 67);
+		let to = color(253, 254, 2);
+		let interA = lerpColor(from, to, this.body.length/50);
+		fill(interA);
+		rect(this.body[i].x, this.body[i].y, 1, 1);
+		}
+	}
+
+	//modification: added a function for a start message
+	gameStart(a){
+		let txt = 'Press Enter';
+		textSize(25);
+		fill(255, a);
+		textAlign(CENTER);
+		text(txt, floor(width / 2), floor(height / 2));
+	}
 }
