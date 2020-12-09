@@ -17,9 +17,9 @@ let serial, latestData; //serial port variables
 
 //load two different story data
 function preload() {
-  firstStory = loadJSON("../firstStory.json");
-  altStory = loadStrings("../altStory.json");
-  img = loadImage('../finalBackground.jpg');
+  firstStory = loadJSON("firstStory.json");
+  altStory = loadStrings("altStory.json");
+  img = loadImage('finalBackground.jpg');
 }
 
 function setup() {
