@@ -6,6 +6,7 @@ When you push the left button, the original story continues.
 If you click the right switch, the time goes back slightly.
 The user can roll back only once and will see the consequences.
 
+[1]
 I used the RiTa library (Version 1.12; Howe 2015) to perform natural language processing of the alternate story text.
 Retrieved from https://rednoise.org/rita
 */
