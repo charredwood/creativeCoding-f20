@@ -1,0 +1,21 @@
+{
+  "<start>" : "<template1> ! <template1> ! <template2> ! <template2> ! <template2> ! <template2> ! <template2> ! <template2> ! <template3>",
+  
+  "<template1>" : "<subject> <verb1> <object>.",
+  
+  "<template2>" : "<subject> <verb2> <object>.",
+  
+  "<template3>" : "<subject> <verb3> <object>.",
+  
+  "<subject>" : "The bodega cat | The rat | It",
+  
+  "<verb1>" : "saw | got distracted by | didn't see | was worried about | got suspicious about | wanted | found | got interested in | hated",
+  
+  "<verb2>" : "ran away from | chased | gave up on | didn't go after | was worried about | fell in love with <subobject> and blamed | liked",
+
+  "<verb3>" : "went home with | was caught by | blamed",
+
+  "<object>" : "a cat | another rat | it | a big chunk of pizza | the shop owner | the trap beside the pizza | the food",
+  
+  "<subobject>" : "another cat | another rat | it | the shop owner"
+}
