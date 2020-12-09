@@ -15,7 +15,7 @@
 
   "<verb3>" : "went home with | was caught by | blamed",
 
-  "<object>" : "a cat | another rat | it | a big chunk of pizza | the shop owner | the trap beside the pizza | the food",
+  "<object>" : "another cat | another rat | it | a big chunk of pizza | the shop owner | the trap beside the pizza | the food",
   
   "<subobject>" : "the cat | the rat | the shop owner"
 }
