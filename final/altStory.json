@@ -11,7 +11,7 @@
 
   "<verb1>" : "saw | got distracted by | didn't see | was worried about | got suspicious about | wanted | found | got interested in",
 
-  "<verb2>" : "ran away from | chased | gave up on | didn't go after | was worried about | fell in love with <subobject> and blamed | liked | hated | looked at | observed",
+  "<verb2>" : "ran away from | chased | gave up on | didn't go after | was worried about | fell in love with <subobject> | liked | hated | looked at | observed",
 
   "<verb3>" : "went home with | was caught by | blamed",
 
