@@ -44,6 +44,9 @@ void loop()
   //number being displayed
   displayNumber(timeDigit);
   timeDigit = timeDigit + 1; //make the time flows
+  if (timeDigit > 6000) {
+    timeDigit = 0;
+  }
 
   //read the button state
   int buttonState = analogRead(buttonPin);
@@ -63,7 +66,7 @@ void loop()
 void displayNumber(int num)
 {   
     tm.point(1);
-    tm.display(3, num % 10);   
+    tm.display(3, num % 10);
     tm.display(2, num / 10 % 10);   
     tm.display(1, num / 100 % 10);   
     tm.display(0, num / 1000 % 10);
