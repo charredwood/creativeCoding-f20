@@ -1,4 +1,4 @@
-//VER 2: Demo without the Arduino board
+//VER 2: Demonstrate how the initial design works without Arduino board.
 //Click to proceed the original story
 //Enter to rewrite the alternate story
 
